@@ -1,0 +1,64 @@
+<div class="container">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Image part -->
+                <div class="col-lg-6 p-0 mt-5">
+                    <img src="https://www.thelocal.dk/userdata/images/article/ff0c9597d2f673d0df8ee24b8994b2add3429e91629589443226b175b1f4b1a1.jpg"
+                        class="img-fluid max-width: 100% height: auto" alt="Responsive image">
+                </div>
+                <!-- Text content -->
+                <div class="col-lg-6 mt-5">
+                    <div class="card text-center border border-primary h-100">
+                        <div class="card-header d-flex justify-content-between">
+                            Veselko Šaravanja, Dobro Selo
+                            <button type="button" class="btn btn-primary">
+                                Votes <span class="badge badge-light">11</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title border-bottom pb-2">Foka</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <a href="#" class="btn btn-primary">See more</a>
+                        </div>
+                        <div class="card-footer">
+                            1 days ago
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content -->
+        <div class="container-fluid">
+            <div class="row">
+                <!-- Image part -->
+                <div class="col-lg-6 p-0 mt-5">
+                    <img src="https://19mvmv3yn2qc2bdb912o1t2n-wpengine.netdna-ssl.com/science/files/2013/12/tnc_17745326_preview-1260x708.jpg"
+                        class="img-fluid max-width: 100% height: auto" alt="Responsive image">
+                </div>
+                <!-- Text content -->
+                <div class="col-lg-6 mt-5">
+                    <div class="card text-center border border-primary h-100">
+                        <div class="card-header d-flex justify-content-between">
+                            Ljubo Grubesic, Tepcici
+                            <button type="button" class="btn btn-primary">
+                                Votes <span class="badge badge-light">7</span>
+                            </button>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title border-bottom pb-2">Polarni medo</h5>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+                                eiusmod
+                                tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <a href="#" class="btn btn-primary">See more</a>
+                        </div>
+                        <div class="card-footer">
+                            2 days ago
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
