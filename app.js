@@ -17,6 +17,16 @@ app.get("/photocon", function(req, res){
     res.render("photocon");
 });
 
+//SIGNUP AND LOGIN
+
+app.get("/register", function(req, res){
+    res.render("register");
+});
+
+app.get("/login", function(req, res){
+    res.render("login");
+});
+
 //CONTEST ROUTES
 
 app.get("/photocon/nature", function(req, res){
