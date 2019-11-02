@@ -20,8 +20,18 @@ section {
     height: calc(100vh - 50px);
 }
 
+#contests {
+  background: #e9ecef;
+}
+
+#arch {
+  width: 75%;
+  background: #fff;
+  margin-bottom: 15px;
+}
+
 .carusel {
-  max-height: 90vh;
+  max-height: 85vh;
 }
 
 .yellow {
