@@ -18,6 +18,7 @@ export function _apiCall(method = 'GET', url, data, auth = true, cookie=false) {
         xhr.open(method, url, true);
         // auth ? xhr.setRequestHeader('Authorization', API_KEY) : null;
         xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
         if(cookie) {
             xhr.withCredentials = true;
             xhr.crossDomain = true;
