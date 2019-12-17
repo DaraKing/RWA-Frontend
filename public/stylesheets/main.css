@@ -15,7 +15,7 @@ section {
 }
 
 .view {
-    background: url("https://mdbootstrap.com/img/Photos/Others/img (50).jpg")no-repeat center center;
+    background: url("https://cdn.pixabay.com/photo/2018/09/05/12/01/nature-3656121_1280.jpg")no-repeat center center;
     background-size: cover;
     height: calc(100vh - 50px);
 }

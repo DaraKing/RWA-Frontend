@@ -28,7 +28,6 @@ app.get("/login", function(req, res){
 });
 
 //CONTEST ROUTES
-
 app.get("/photocon/nature", function(req, res){
     res.render("nature");
 });
@@ -42,7 +41,6 @@ app.get("/photocon/food", function(req, res){
 });
 
 //NEW
-
 app.get("/photocon/nature/new", function(req, res){
     res.render("newNature");
 });
@@ -57,6 +55,18 @@ app.get("/photocon/food/new", function(req, res){
 
 
 //OVDE CE ICI ZA LOGIN I SIGN UP
+
+
+
+//USERS ROUTES
+app.get("/users", function(req, res){
+    res.render("users");
+});
+
+//USER EDIT
+app.get("/users/edit", function(req, res){
+    res.render("userEdit");
+});
 
 //LISTENER
 
