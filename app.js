@@ -4,6 +4,8 @@ var express = require("express"),
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
+import * as u from 'public/js/dist/utilis.js';
+import * as _c from 'public/js/dist/constants.js';
 
 //=========
 //ROUTES
@@ -60,7 +62,15 @@ app.get("/photocon/food/new", function(req, res){
 
 //USERS ROUTES
 app.get("/users", function(req, res){
-    res.render("users");
+    let users;
+    u._apiCall('GET', `${_c.API_URL.user}/api/users/all`)
+        .then((resp) => {
+            users = resp;
+        })
+        .catch((error) => {
+            console.log(error)
+        });
+    res.render("users", {data: users});
 });
 
 //USER EDIT

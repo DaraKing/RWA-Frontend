@@ -5,7 +5,7 @@ export function _setLocalStorage(key, value) {
 }
 
 export function _getLocalStorage(key) {
-    return localStorage.getItem(key);
+    return JSON.parse(localStorage.getItem(key));
 }
 
 export function _redirect(url) {
@@ -16,7 +16,7 @@ export function _apiCall(method = 'GET', url, data, auth = true, cookie=false) {
     return new Promise(function (resolve, reject) {
         let xhr = new XMLHttpRequest();
         xhr.open(method, url, true);
-        // auth ? xhr.setRequestHeader('Authorization', API_KEY) : null;
+        auth ? xhr.setRequestHeader('Authorization', 'Bearer ' + _getLocalStorage('user').user_token) : null;
         xhr.setRequestHeader('Content-Type', 'application/json');
         xhr.setRequestHeader("Access-Control-Allow-Origin", "*");
         if(cookie) {
