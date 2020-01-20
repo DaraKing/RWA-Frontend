@@ -4,8 +4,8 @@ var express = require("express"),
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
-/* import * as u from 'public/js/dist/utilis.js';
-import * as _c from 'public/js/dist/constants.js'; */
+import * as u from 'public/js/dist/utilis.js';
+import * as _c from 'public/js/dist/constants.js';
 
 //=========
 //ROUTES
