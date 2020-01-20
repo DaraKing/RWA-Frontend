@@ -44,6 +44,10 @@ section {
 
 .footer {
   letter-spacing: 2px;
+  position: relative;
+  margin-top: 40px;
+  height: 150px;
+  clear: both;
 }
 
 /* NEW PAGE */

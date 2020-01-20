@@ -4,8 +4,8 @@ var express = require("express"),
 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
-import * as u from 'public/js/dist/utilis.js';
-import * as _c from 'public/js/dist/constants.js';
+/* import * as u from 'public/js/dist/utilis.js';
+import * as _c from 'public/js/dist/constants.js'; */
 
 //=========
 //ROUTES
@@ -47,12 +47,26 @@ app.get("/photocon/nature/new", function(req, res){
     res.render("newNature");
 });
 
+
 app.get("/photocon/animals/new", function(req, res){
     res.render("newAnimals");
 });
 
 app.get("/photocon/food/new", function(req, res){
     res.render("newFood");
+});
+
+//CREATE 
+app.post("/photocon/nature/new", function(req,res){
+    
+});
+
+app.post("/photocon/animals/new", function(req,res){
+
+});
+
+app.post("/photocon/food/new", function(req,res){
+
 });
 
 
