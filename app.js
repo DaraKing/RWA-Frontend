@@ -5,6 +5,8 @@ var express = require("express"),
 const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
+// import * as u from 'public/js/dist/utilis.js';
+// import * as _c from 'public/js/dist/constants.js';
 
 // const _c = import('public/js/dist/constants.js')
 //     .catch((err) => {
@@ -55,6 +57,7 @@ app.get("/photocon/nature/new", function(req, res){
     res.render("newNature");
 });
 
+
 app.get("/photocon/animals/new", function(req, res){
     res.render("newAnimals");
 });
@@ -91,6 +94,19 @@ function apiCall(method = 'GET', url, data) {
 
     return payload;
 }
+//CREATE
+app.post("/photocon/nature/new", function(req,res){
+
+});
+
+app.post("/photocon/animals/new", function(req,res){
+
+});
+
+app.post("/photocon/food/new", function(req,res){
+
+});
+
 
 //OVDE CE ICI ZA LOGIN I SIGN UP
 

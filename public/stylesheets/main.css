@@ -9,6 +9,9 @@ section {
   padding: 80px 0;
 }
 
+.sec {
+  padding: 120px 0;
+}
 .navbar-brand {
   font-family: 'Kaushan Script';
   color: #fed136;
