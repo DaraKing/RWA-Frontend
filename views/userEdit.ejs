@@ -9,16 +9,32 @@
                         <form action="" method="POST">
                             <div class="form-group">
                                 <span>User Full Name</span><input class="form-control" type="text" name=""
-                                    placeholder="">
+                                    placeholder="" value="<%= user.first_name %>">
                             </div>
                             <div class="form-group">
-                                <span>User Email</span><input class="form-control" type="text" name="" placeholder="">
+                                <span>User Email</span><input class="form-control" type="text" name="" placeholder="" value="<%= user.email %>">
                             </div>
                             <div class="form-group">
-                                <span>User Status</span><input class="form-control" type="text" name="" placeholder="">
+                                <span>User Status</span><input class="form-control" type="text" name=""
+                                value="<% if(user.deleted){ %>
+Deleted
+                                <%  } else { %>
+Active
+                                <% } %>">
                             </div>
                             <div class="form-group">
-                                <span>User Role</span><input class="form-control" type="text" name="" placeholder="">
+                                <span>User Role</span>
+                                <select>
+                                    <% roles.forEach( role => { %>
+                                        <option
+                                        value="<%= role.role_id %>"
+                                        <% if(role.role_id === user.role_id) { %> selected <% } %>>
+                                            <%= role.role_name %>
+                                        </option>
+                                    <% }) %>
+                                </select>
+
+                                <input class="form-control" type="text" name="" placeholder="">
                             </div>
                             <div class="form-group">
                                 <span>Registration Date: 1.1.2001.</span>
