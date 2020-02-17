@@ -1,8 +1,10 @@
+let api = require('./common/api');
+let constants = require('./common/constants');
+
 var express = require("express"),
     app = express(),
     port = process.env.PORT || 3000;
 
-const XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
 // import * as u from 'public/js/dist/utilis.js';
@@ -66,34 +68,6 @@ app.get("/photocon/food/new", function(req, res){
     res.render("newFood");
 });
 
-function apiCall(method = 'GET', url, data) {
-
-    let payload;
-
-    let xhr = new XMLHttpRequest();
-    xhr.open(method, url, false);
-    xhr.setRequestHeader('Authorization', 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRhcmlvLmtuZXpvdmljaEBnbWFpbC5jb20iLCJ1c2VyX2lkIjoxLCJyb2xlX2lkIjozLCJpYXQiOjE1NzkyOTcxMzV9.1SDu5PBgRP-kvVZzGuZQstKIJA6v4pR0Ev7iI4jTtak');
-    xhr.onload  = function () {
-        if (this.status >= 200 && this.status < 300) {
-            payload = JSON.parse(xhr.responseText);
-        } else {
-            console.warn({
-                status    : this.status,
-                statusText: xhr.statusText,
-                error     : this.responseText,
-            });
-        }
-    };
-    xhr.onerror = function () {
-        console.error({
-            status    : this.status,
-            statusText: xhr.statusText,
-        });
-    };
-    xhr.send(data);
-
-    return payload;
-}
 //CREATE
 app.post("/photocon/nature/new", function(req,res){
 
@@ -112,7 +86,7 @@ app.post("/photocon/food/new", function(req,res){
 
 //USERS ROUTES
 app.get("/users", function(req, res){
-    let users = apiCall('GET' ,'http://localhost:4000/api/users/all',null);
+    let users = api.call('GET' ,`${constants.API_URL}/api/users/all`,null);
     if (!users) {
         return
     }
@@ -123,12 +97,12 @@ app.get("/users", function(req, res){
 //USER EDIT
 app.get("/users/edit/:id", function(req, res){
     let id = req.params.id;
-    let user = apiCall('GET', `http://localhost:4000/api/users/${id}`, null);
+    let user = api.call('GET', `${constants.API_URL}/api/users/${id}`, null);
     if(!user) {
         return
     }
 
-    let roles = apiCall('GET', 'http://localhost:4000/api/roles/all', null);
+    let roles = api.call('GET', `${constants.API_URL}/api/roles/all`, null);
     if(!roles) {
         return
     }
