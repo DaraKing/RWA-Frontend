@@ -35,38 +35,37 @@ app.get("/photocon", function(req, res){
 //SIGNUP AND LOGIN
 
 app.get("/register", function(req, res){
-    res.render("register");
+    res.render("logInAndSignUp/register");
 });
 
 app.get("/login", function(req, res){
-    res.render("login");
+    res.render("logInAndSignUp/login");
 });
 
 //CONTEST ROUTES
 app.get("/photocon/nature", function(req, res){
-    res.render("nature");
+    res.render("categories/singleCategory");
 });
 
 app.get("/photocon/animals", function(req, res){
-    res.render("animals");
+    res.render("categories/singleCategory");
 });
 
 app.get("/photocon/food", function(req, res){
-    res.render("food");
+    res.render("categories/singleCategory");
 });
 
 //NEW
 app.get("/photocon/nature/new", function(req, res){
-    res.render("newNature");
+    res.render("newPost");
 });
 
-
 app.get("/photocon/animals/new", function(req, res){
-    res.render("newAnimals");
+    res.render("newPost");
 });
 
 app.get("/photocon/food/new", function(req, res){
-    res.render("newFood");
+    res.render("newPost");
 });
 
 //CREATE
