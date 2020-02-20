@@ -3,6 +3,17 @@ let constants = require('../common/constants');
 
 module.exports = {
 
+    //Get categories for landing page
+    webCategories: function(req, res) {
+        let categorie = api.call("GET", `${constants.API_URL}/api/category/web`, null);
+
+        if(!categorie){
+            return;
+        }
+
+        res.render("photocon", {data: categorie});
+    },
+
     // GET all categories
     getAll: function (req, res) {
         let categories = api.call("GET", `${constants.API_URL}/api/category/all`, null);
@@ -24,12 +35,5 @@ module.exports = {
         }
 
         res.render("editCategories", { categorie });
-    },
-
-    // CREATE category
-
-    create: function (req, res) {
-
-        res.render("categories/createCategory");
     }
 }

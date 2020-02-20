@@ -29,9 +29,7 @@ app.get("/", function(req, res){
 	res.redirect("photocon");
 });
 
-app.get("/photocon", function(req, res){
-    res.render("photocon");
-});
+app.get("/photocon", categories.webCategories);
 
 //SIGNUP AND LOGIN
 
