@@ -5,15 +5,15 @@ module.exports = {
 
     // GET all categories
     getAll: function (req, res) {
-        let categories = api.call("GET", `${constants.API_URL}/api/categories/all`, null);
+        let categories = api.call("GET", `${constants.API_URL}/api/category/all`, null);
 
         if (!categories) {
             return;
         }
 
-        res.render("categories", { data: categories });
+        res.render("categories/allCategories", { data: categories });
     },
-    
+
     // EDIT categories
     edit: function (req, res) {
         let id = req.params.id;

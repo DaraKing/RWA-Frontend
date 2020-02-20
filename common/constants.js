@@ -1,3 +1,3 @@
 module.exports = {
-    API_URL     : 'http://c6449b97.ngrok.io'
+    API_URL     : 'http://localhost:4000'
 };

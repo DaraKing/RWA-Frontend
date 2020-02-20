@@ -1,6 +1,7 @@
 let api = require('./common/api');
 let constants = require('./common/constants');
 let users = require('./controllers/users');
+let categories = require('./controllers/categories');
 
 var express = require("express"),
     app = express(),
@@ -89,6 +90,9 @@ app.get("/users", users.getAll);
 
 //USER EDIT
 app.get("/users/edit/:id", users.edit);
+
+//ALL CATEGORIES
+app.get("/admin/categories/all", categories.getAll);
 
 //LISTENER
 
