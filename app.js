@@ -94,6 +94,8 @@ app.get("/users/edit/:id", users.edit);
 //ALL CATEGORIES
 app.get("/admin/categories/all", categories.getAll);
 
+app.get("/admin/categories/create", categories.create);
+
 //LISTENER
 
 app.listen(port, function () {
