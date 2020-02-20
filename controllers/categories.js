@@ -35,5 +35,10 @@ module.exports = {
         }
 
         res.render("editCategories", { categorie });
+    },
+
+    // CREATE category
+    create: function (req, res) {
+        res.render("categories/createCategory");
     }
 }
