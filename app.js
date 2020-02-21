@@ -1,14 +1,27 @@
-let api = require('./common/api');
-let constants = require('./common/constants');
-let users = require('./controllers/users');
-let categories = require('./controllers/categories');
+// let api = require('./common/api'),
+//     constants = require('./common/constants'),
+//     users = require('./controllers/users'),
+//     categories = require('./controllers/categories')
 
-var express = require("express"),
+// Setup
+let express = require("express"),
     app = express(),
-    port = process.env.PORT || 3000;
+    port = process.env.PORT || 3000
 
+// Requiring routes 
+var indexRoutes = require("./routes/index"),
+    adminRoutes = require("./routes/admin"),
+    userRoutes = require("./routes/users")
+
+// Ejs and static 
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
+
+// Use routes
+app.use("/", indexRoutes);
+app.use("/", adminRoutes);
+app.use("/", userRoutes);
+
 // import * as u from 'public/js/dist/utilis.js';
 // import * as _c from 'public/js/dist/constants.js';
 
@@ -25,77 +38,77 @@ app.use(express.static(__dirname + '/public'));
 //ROUTES
 //=========
 
-app.get("/", function(req, res){
-	res.redirect("photocon");
-});
+// app.get("/", function(req, res){
+// 	res.redirect("photocon");
+// });
 
-app.get("/photocon", categories.webCategories);
+// app.get("/photocon", categories.webCategories);
 
 //SIGNUP AND LOGIN
 
-app.get("/register", function(req, res){
+app.get("/register", function (req, res) {
     res.render("logInAndSignUp/register");
 });
 
-app.get("/login", function(req, res){
+app.get("/login", function (req, res) {
     res.render("logInAndSignUp/login");
 });
 
 //CONTEST ROUTES
-app.get("/photocon/nature", function(req, res){
+app.get("/photocon/nature", function (req, res) {
     res.render("categories/singleCategory");
 });
 
-app.get("/photocon/animals", function(req, res){
+app.get("/photocon/animals", function (req, res) {
     res.render("categories/singleCategory");
 });
 
-app.get("/photocon/food", function(req, res){
+app.get("/photocon/food", function (req, res) {
     res.render("categories/singleCategory");
 });
 
 //NEW
-app.get("/photocon/nature/new", function(req, res){
+app.get("/photocon/nature/new", function (req, res) {
     res.render("newPost");
 });
 
-app.get("/photocon/animals/new", function(req, res){
+app.get("/photocon/animals/new", function (req, res) {
     res.render("newPost");
 });
 
-app.get("/photocon/food/new", function(req, res){
+app.get("/photocon/food/new", function (req, res) {
     res.render("newPost");
 });
 
 //CREATE
-app.post("/photocon/nature/new", function(req,res){
+app.post("/photocon/nature/new", function (req, res) {
 
 });
 
-app.post("/photocon/animals/new", function(req,res){
+app.post("/photocon/animals/new", function (req, res) {
 
 });
 
-app.post("/photocon/food/new", function(req,res){
+app.post("/photocon/food/new", function (req, res) {
 
 });
 
 
 //OVDE CE ICI ZA LOGIN I SIGN UP
 
-//USERS ROUTES
-app.get("/users", users.getAll);
+// //USERS ROUTES
+// app.get("/users", users.getAll);
 
-//USER EDIT
-app.get("/users/edit/:id", users.edit);
+// //USER EDIT
+// app.get("/users/edit/:id", users.edit);
 
 //ALL CATEGORIES
-app.get("/admin/categories/all", categories.getAll);
+// app.get("/admin/categories/all", categories.getAll);
 
-app.get("/admin/categories/create", categories.create);
+// app.get("/admin/categories/create", categories.create);
 
 //LISTENER
 
 app.listen(port, function () {
-	console.log("Server has started!");
+    console.log("Server has started!");
 });
