@@ -32,24 +32,15 @@
             </div>
         </div>
         <div class="row text-center pt-4">
-            <div class="col-md-4">
-                <a href="/photocon/nature"><img src="/img/contests/nature.png" width="100" height="100" alt=""></a>
-                <h4 class="pt-3">Nature</h4>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-            <div class="col-md-4">
-                <a href="/photocon/animals"><img src="/img/contests/seal.png" width="100" height="100" alt=""></a>
-                <h4 class="pt-3">Animals</h4>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
-            <div class="col-md-4">
-                <a href="/photocon/food"><img src="/img/contests/food.png" width="100" height="100" alt=""></a>
-                <h4 class="pt-3">Food</h4>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                    tempor incididunt ut labore et dolore magna aliqua.</p>
-            </div>
+            <% data.forEach(elem => { %>
+                <div class="col-md-4">
+                    <a href="#">
+                        <img src="<%= elem.category_image %>" width="100" height="100">
+                    </a>
+                    <h4 class="pt-3"><%= elem.category_name %></h4>
+                    <p class="lead"><%= elem.category_description %></p>
+                </div>
+            <% }) %>
         </div>
     </div>
 </section>
