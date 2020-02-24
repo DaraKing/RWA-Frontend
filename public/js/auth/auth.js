@@ -8,6 +8,16 @@ if(user) {
     document.querySelector(".current-user").style.display = "none";
 }
 
+if(user.role_id != 1) {
+    let dropdownMenu = document.querySelector('.dropdown-menu');
+    let a = document.createElement("a");
+    a.classList.add("dropdown-item");
+    a.href = "/admin/categories/all";
+    a.text = "Admin panel";
+
+    dropdownMenu.prepend(a);
+}
+
 document.getElementById("logout").addEventListener("click", function () {
     window.localStorage.removeItem('user');
     window.reload();
