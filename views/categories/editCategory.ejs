@@ -1,0 +1,32 @@
+<% include ../partials/admin/header %>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-left">
+                <div>
+                    <div class="form-container">
+                        <div class="form-group">
+                            <span>Category name</span>
+                            <input class="form-control" type="text" id="category_name" value="<%= data.category_name %>">
+                        </div>
+                        <div class="form-group">
+                            <span>Category description</span>
+                            <textarea id="category_description" rows="4" cols="50"><%= data.category_description %></textarea>
+                        </div>
+                        <div class="form-group">
+                            <span>Category url image</span>
+                            <input class="form-control" type="text" id="category_image" value="<%= data.category_image %>">
+                        </div>
+                        <input type="hidden" id="category_id" value="<%= data.category_id %>">
+
+                        <input class="btn btn-primary" type="submit" id="edit-category" value="Edit">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="/js/categories/index.js" type="module"></script>
+<% include ../partials/admin/footer %>

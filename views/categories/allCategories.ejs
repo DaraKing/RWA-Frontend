@@ -16,6 +16,7 @@
                     <!-- List of users -->
                     <div class="row">
                         <div class="col-lg-2 border">#</div>
+                        <div class="col-lg-2 border">Image</div>
                         <div class="col-lg-2 border">Name</div>
                         <div class="col-lg-2 border">Description</div>
                         <div class="col-lg-4 border">Action</div>
@@ -23,10 +24,11 @@
                     <% data.forEach( elem => { %>
                         <div class="row">
                             <div class="col-lg-2 border"><%= elem.category_id %></div>
+                            <div class="col-lg-2 border"><img style="width: 126px; height: 126px;" src="<%= elem.category_image %>"></div>
                             <div class="col-lg-2 border"><%= elem.category_name %></div>
                             <div class="col-lg-2 border"><%= elem.category_description %></div>
                             <div class="col-lg-4 border">
-                            <a href="users/edit/<%= elem.category_id %>">
+                            <a href="/admin/categories/edit/<%= elem.category_id %>">
                                 <button class="btn btn-info">Edit</button>
                             </a>
                             <button class="btn btn-danger delete-category" id="<%= elem.category_id %>">

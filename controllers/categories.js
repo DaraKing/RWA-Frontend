@@ -28,13 +28,13 @@ module.exports = {
     // EDIT categories
     edit: function (req, res) {
         let id = req.params.id;
-        let categorie = api.call("GET", `${constants.API_URL}/api/categories/${id}`, null);
+        let categorie = api.call("GET", `${constants.API_URL}/api/category/${id}`, null);
 
         if (!categorie) {
             return;
         }
 
-        res.render("editCategories", { categorie });
+        res.render("categories/editCategory", { data: categorie });
     },
 
     // CREATE category
