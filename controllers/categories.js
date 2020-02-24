@@ -40,5 +40,15 @@ module.exports = {
     // CREATE category
     create: function (req, res) {
         res.render("categories/createCategory");
+    },
+
+    singleWebCategory(req, res) {
+        let id = req.params.id;
+        let categorie = api.call("GET", `${constants.API_URL}/api/category/web/${id}`, null);
+        if(!categorie){
+            return;
+        }
+
+        res.render("categories/singleWebCategory", {data: categorie});
     }
 }

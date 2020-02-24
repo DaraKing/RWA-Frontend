@@ -34,7 +34,7 @@
         <div class="row text-center pt-4">
             <% data.forEach(elem => { %>
                 <div class="col-md-4">
-                    <a href="#">
+                    <a href="/category/<%= elem.category_id %>">
                         <img src="<%= elem.category_image %>" width="100" height="100">
                     </a>
                     <h4 class="pt-3"><%= elem.category_name %></h4>

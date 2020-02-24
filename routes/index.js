@@ -10,5 +10,7 @@ router.get("/", (req, res) => {
 // Index route
 router.get("/photocon", categories.webCategories);
 
+router.get("/category/:id", categories.singleWebCategory);
+
 
 module.exports = router;
