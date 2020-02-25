@@ -49,6 +49,6 @@ module.exports = {
             return;
         }
 
-        res.render("categories/singleWebCategory", {data: categorie});
+        res.render("categories/singleWebCategory", {data: categorie[0]});
     }
 }

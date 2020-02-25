@@ -1,4 +1,5 @@
 let user = JSON.parse(window.localStorage.getItem('user'));
+let uploadBtn = document.getElementById('upload-photo');
 
 if(user) {
     document.querySelector(".login").style.display = "none";
@@ -6,6 +7,9 @@ if(user) {
     document.querySelector(".current-user > a").text = user.first_name + " " + user.last_name;
 }else {
     document.querySelector(".current-user").style.display = "none";
+    if(uploadBtn) {
+        uploadBtn.style.display = "none";
+    }
 }
 
 if(user.role_id != 1) {
