@@ -23,6 +23,11 @@ section {
     height: calc(100vh - 50px);
 }
 
+.like {
+  padding: 10px 10px 10px 36px;
+  background: url(/img/likeButton/heart.png) 10px no-repeat;
+}
+
 #contests {
   background: #e9ecef;
 }

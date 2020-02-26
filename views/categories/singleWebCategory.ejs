@@ -1,21 +1,63 @@
 <% include ../partials/header %>
-    <div class="jumbotron">
-      <img src="<%= data.category_image %>" style="display: block; margin: auto; height: 512px;" />
-      <h1 class="display-4"><%= data.category_name %></h1>
-      <p class="lead"><%= data.category_description%></p>
-      <p class="card-text">Current competitive photos</p>
-      <hr class="my-4">
-      <div class="row">
-          <% data.photos.forEach(elem => { %>
-                <div class="card col-4" style="width: 18rem;">
-                  <img src="http://localhost:4000/<%= elem.photo_filename %>" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title"><%= elem.first_name %> <%= elem.last_name %> </h5>
-                  </div>
-                </div>
-          <% }) %>
+
+<!-- Jumbotron -->
+
+<section class="p-0 pt-2">
+  <div class="container-fluid d-flex justify-content-center">
+    <div class="row">
+      <div class="jumbotron text-center">
+        <img src="<%= data.category_image %>" style="display: block; margin: auto; height: 512px;" />
+
+        <!-- Text -->
+
+        <h1 class="display-4 mt-2"><%= data.category_name %></h1>
+        <hr>
+        <p class="lead"><%= data.category_description%></p>
+        <button class="btn btn-warning">Submit your photo</button>
       </div>
-      <hr/>
-      <a class="btn btn-primary btn-lg" href="#" id="upload-photo" role="button">Upload your photo</a>
     </div>
+  </div>
+</section>
+
+<!-- All the photos -->
+
+<section class="p-0">
+  <div class="container">
+    <div class="row">
+      <% data.photos.forEach(elem => { %>
+      <div class="card col-4 m-1">
+        <img src="http://localhost:4000/<%= elem.photo_filename %>" class="card-img-top p-1" alt="Image not found">
+        <div class="card-body text-center">
+          <h5 class="card-title"><%= elem.first_name %> <%= elem.last_name %></h5>
+          <!-- <button class="btn btn-outline-danger">Like <img src="https://image.flaticon.com/icons/svg/633/633759.svg" style="vertical-align: middle;" alt=""></button> -->
+
+          <button class="like btn btn-outline-danger"><span class="ml-4">Like</span></button>
+        </div>
+      </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+
+<!-- <div class="jumbotron">
+  <img src="<%= data.category_image %>" style="display: block; margin: auto; height: 512px;" />
+  <h1 class="display-4"><%= data.category_name %></h1>
+  <p class="lead"><%= data.category_description%></p>
+  <p class="card-text">Current competitive photos</p>
+  <hr class="my-4">
+  <div class="row">
+    <% data.photos.forEach(elem => { %>
+    <div class="card col-4" style="width: 18rem;">
+      <img src="http://localhost:4000/<%= elem.photo_filename %>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= elem.first_name %> <%= elem.last_name %> </h5>
+      </div>
+    </div>
+    <% }) %>
+  </div>
+  <hr />
+  <a class="btn btn-primary btn-lg" href="#" id="upload-photo" role="button">Upload your photo</a>
+</div> -->
+
 <% include ../partials/footer %>
