@@ -49,43 +49,43 @@ app.use("/", imageRoutes);
 // app.get("/photocon", categories.webCategories);
 
 //CONTEST ROUTES
-app.get("/photocon/nature", function (req, res) {
-    res.render("categories/singleCategory");
-});
+// app.get("/photocon/nature", function (req, res) {
+//     res.render("categories/singleCategory");
+// });
 
-app.get("/photocon/animals", function (req, res) {
-    res.render("categories/singleCategory");
-});
+// app.get("/photocon/animals", function (req, res) {
+//     res.render("categories/singleCategory");
+// });
 
-app.get("/photocon/food", function (req, res) {
-    res.render("categories/singleCategory");
-});
+// app.get("/photocon/food", function (req, res) {
+//     res.render("categories/singleCategory");
+// });
 
-//NEW
-app.get("/photocon/nature/new", function (req, res) {
-    res.render("newPost");
-});
+// //NEW
+// app.get("/photocon/nature/new", function (req, res) {
+//     res.render("newPost");
+// });
 
-app.get("/photocon/animals/new", function (req, res) {
-    res.render("newPost");
-});
+// app.get("/photocon/animals/new", function (req, res) {
+//     res.render("newPost");
+// });
 
-app.get("/photocon/food/new", function (req, res) {
-    res.render("newPost");
-});
+// app.get("/photocon/food/new", function (req, res) {
+//     res.render("newPost");
+// });
 
-//CREATE
-app.post("/photocon/nature/new", function (req, res) {
+// //CREATE
+// app.post("/photocon/nature/new", function (req, res) {
 
-});
+// });
 
-app.post("/photocon/animals/new", function (req, res) {
+// app.post("/photocon/animals/new", function (req, res) {
 
-});
+// });
 
-app.post("/photocon/food/new", function (req, res) {
+// app.post("/photocon/food/new", function (req, res) {
 
-});
+// });
 
 
 //OVDE CE ICI ZA LOGIN I SIGN UP
