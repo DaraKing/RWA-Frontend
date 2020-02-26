@@ -18,22 +18,22 @@
                     <div class="col-lg-4 border">Action</div>
                 </div>
                 <% data.forEach( elem => { %>
-                    <div class="row">
-                        <div class="col-lg-2 border"><%= elem.first_name %></div>
-                        <div class="col-lg-2 border"><%= elem.last_name %></div>
-                        <div class="col-lg-2 border"><%= elem.role_name %></div>
-                        <div class="col-lg-2 border"><% if(elem.deleted){ %>
-                                                               Deleted
-                                                      <%  } else { %>
-                                                               Active
-                                                            <% } %>
-                        </div>
-                        <div class="col-lg-4 border">
-                        <a href="users/edit/<%= elem.user_id %>">
-                            <button>Edit</button>
-                        </a>
-                        </div>
+                <div class="row">
+                    <div class="col-lg-2 border"><%= elem.first_name %></div>
+                    <div class="col-lg-2 border"><%= elem.last_name %></div>
+                    <div class="col-lg-2 border"><%= elem.role_name %></div>
+                    <div class="col-lg-2 border"><% if(elem.deleted){ %>
+                        Deleted
+                        <%  } else { %>
+                        Active
+                        <% } %>
                     </div>
+                    <div class="col-lg-4 border">
+                        <a href="users/edit/<%= elem.user_id %>">
+                            <button class="btn btn-warning my-1">Edit</button>
+                        </a>
+                    </div>
+                </div>
                 <% }); %>
             </div>
         </div>

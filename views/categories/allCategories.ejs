@@ -15,7 +15,7 @@
 
                     <!-- List of users -->
                     <div class="row">
-                        <div class="col-lg-2 border">#</div>
+                        <div class="col-lg-2 border">ID</div>
                         <div class="col-lg-2 border">Image</div>
                         <div class="col-lg-2 border">Name</div>
                         <div class="col-lg-2 border">Description</div>
@@ -29,9 +29,9 @@
                             <div class="col-lg-2 border"><%= elem.category_description %></div>
                             <div class="col-lg-4 border">
                             <a href="/admin/categories/edit/<%= elem.category_id %>">
-                                <button class="btn btn-info">Edit</button>
+                                <button class="btn btn-warning mt-1">Edit</button>
                             </a>
-                            <button class="btn btn-danger delete-category" id="<%= elem.category_id %>">
+                            <button class="btn btn-danger delete-category mt-1" id="<%= elem.category_id %>">
                                 Delete
                             </button>
                             </div>
