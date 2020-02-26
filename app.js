@@ -12,7 +12,8 @@ let express = require("express"),
 var indexRoutes = require("./routes/index"),
     adminRoutes = require("./routes/admin"),
     userRoutes = require("./routes/users"),
-    authRoutes = require("./routes/auth");
+    authRoutes = require("./routes/auth"),
+    imageRoutes = require("./routes/images");
 
 // Ejs and static
 app.set("view engine", "ejs");
@@ -23,6 +24,7 @@ app.use("/", indexRoutes);
 app.use("/", adminRoutes);
 app.use("/", userRoutes);
 app.use("/", authRoutes);
+app.use("/", imageRoutes);
 
 // import * as u from 'public/js/dist/utilis.js';
 // import * as _c from 'public/js/dist/constants.js';

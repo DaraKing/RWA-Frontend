@@ -1,6 +1,6 @@
 let express = require("express"),
     router = express.Router(),
-    images = require('../controllers/images')
+    images = require('../controllers/image')
 
 // New image
 router.get("/category-photo/upload", images.new);
