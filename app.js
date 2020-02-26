@@ -8,12 +8,13 @@ let express = require("express"),
     app = express(),
     port = process.env.PORT || 3000
 
-// Requiring routes 
+// Requiring routes
 var indexRoutes = require("./routes/index"),
     adminRoutes = require("./routes/admin"),
-    userRoutes = require("./routes/users")
+    userRoutes = require("./routes/users"),
+    authRoutes = require("./routes/auth");
 
-// Ejs and static 
+// Ejs and static
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + '/public'));
 
@@ -21,6 +22,7 @@ app.use(express.static(__dirname + '/public'));
 app.use("/", indexRoutes);
 app.use("/", adminRoutes);
 app.use("/", userRoutes);
+app.use("/", authRoutes);
 
 // import * as u from 'public/js/dist/utilis.js';
 // import * as _c from 'public/js/dist/constants.js';
@@ -43,16 +45,6 @@ app.use("/", userRoutes);
 // });
 
 // app.get("/photocon", categories.webCategories);
-
-//SIGNUP AND LOGIN
-
-app.get("/register", function (req, res) {
-    res.render("logInAndSignUp/register");
-});
-
-app.get("/login", function (req, res) {
-    res.render("logInAndSignUp/login");
-});
 
 //CONTEST ROUTES
 app.get("/photocon/nature", function (req, res) {
