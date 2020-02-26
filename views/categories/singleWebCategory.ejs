@@ -12,8 +12,10 @@
 
         <h1 class="display-4 mt-2"><%= data.category_name %></h1>
         <hr>
-        <p class="lead"><%= data.category_description%></p>
-        <button class="btn btn-warning">Submit your photo</button>
+        <p class="lead"><%= data.category_description %></p>
+        <a href="/category-photo/upload">
+          <button class="btn btn-warning">Submit your photo</button>
+        </a>
       </div>
     </div>
   </div>
@@ -23,14 +25,13 @@
 
 <section class="p-0">
   <div class="container">
-    <div class="row">
+    <div class="row d-flex justify-content-center">
       <% data.photos.forEach(elem => { %>
-      <div class="card col-4 m-1">
-        <img src="http://localhost:4000/<%= elem.photo_filename %>" class="card-img-top p-1" alt="Image not found">
+      <div class="card col-lg-9 m-1">
+        <img data-enlargable style="cursor: zoom-in; max-height: 450px;" class="card-img-top p-1" alt="Image not found" src="http://localhost:4000/<%= elem.photo_filename %>" />
         <div class="card-body text-center">
           <h5 class="card-title"><%= elem.first_name %> <%= elem.last_name %></h5>
           <!-- <button class="btn btn-outline-danger">Like <img src="https://image.flaticon.com/icons/svg/633/633759.svg" style="vertical-align: middle;" alt=""></button> -->
-
           <button class="like btn btn-outline-danger"><span class="ml-4">Like</span></button>
         </div>
       </div>
@@ -59,5 +60,24 @@
   <hr />
   <a class="btn btn-primary btn-lg" href="#" id="upload-photo" role="button">Upload your photo</a>
 </div> -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<script>
+  $('img[data-enlargable]').addClass('img-enlargable').click(function(){
+    var src = $(this).attr('src');
+    $('<div>').css({
+        background: 'RGBA(0,0,0,.5) url('+src+') no-repeat center',
+        backgroundSize: 'contain',
+        width:'100%', height:'100%',
+        position:'fixed',
+        zIndex:'10000',
+        top:'0', left:'0',
+        cursor: 'zoom-out'
+    }).click(function(){
+        $(this).remove();
+    }).appendTo('body');
+});
+</script>
 
 <% include ../partials/footer %>
