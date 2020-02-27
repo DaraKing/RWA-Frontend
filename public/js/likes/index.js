@@ -1,9 +1,14 @@
 let user = JSON.parse(window.localStorage.getItem('user'));
-let likeBtns = document.querySelectorAll('.like');
+let likeBtns = document.querySelectorAll('.like-image');
+let dislikeBtns = document.querySelectorAll('.dislike-image');
 
 if (!user) {
     for(let i=0; i<likeBtns.length; i++) {
         likeBtns[i].style.display = "none";
+    }
+
+    for(let i=0; i<dislikeBtns.length; i++) {
+        dislikeBtns[i].style.display = "none";
     }
 }
 let api = function (method = 'GET', url, data) {
@@ -48,8 +53,26 @@ let likeImage = function (element) {
     window.location.reload();
 };
 
+let dislikeImage = function (element) {
+
+    let imageId = element.target.id;
+    let response = api('POST', `http://localhost:4000/api/category-photo/dislike/${imageId}`);
+
+    if(!response) {
+        return
+    }
+
+    window.location.reload();
+};
+
 if(likeBtns) {
     for(let i=0; i<likeBtns.length; i++) {
         likeBtns[i].addEventListener("click", likeImage);
+    }
+}
+
+if(dislikeBtns) {
+    for(let i=0; i<dislikeBtns.length; i++) {
+        dislikeBtns[i].addEventListener("click", dislikeImage);
     }
 }
