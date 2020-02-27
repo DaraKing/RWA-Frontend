@@ -7,18 +7,19 @@
                 <h4 class="mb-4"><strong>CREATE POST</strong>.</h4>
                 <hr>
                 <div class="form-container">
-                    <form action="" method="POST">
+                    <form>
                         <div class="form-group">
-                            <input class="form-control" type="text" name="" placeholder="title">
-                        </div>
-                        <div>
-                            <textarea class="form-control mb-3" type="text" name="" placeholder="description"></textarea>
+                            <input class="form-control" type="text" name="image_title" placeholder="title">
                         </div>
                         <div class="form-group">
-                            <input class="form-control border-0" type="file" name="">
+                            <textarea class="form-control mb-3" type="text" name="image_description" placeholder="description"></textarea>
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-lg btn-default btn-block yellow">Submit!</button>
+                            <input class="form-control border-0" type="file" name="image">
+                        </div>
+                        <input type="hidden" name="category_id" value="<%= categoryId %>">
+                        <div class="form-group">
+                            <button class="btn btn-lg btn-default btn-block yellow" id="submit-image">Submit!</button>
                         </div>
                     </form>
                 </div>
@@ -26,4 +27,5 @@
         </div>
 </section>
 
+<script src="/js/images/index.js" type="module"></script>
 <% include ../partials/footer %>

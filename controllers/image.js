@@ -3,6 +3,7 @@ let constants = require('../common/constants');
 
 module.exports = {
     new: function (req, res) {
-        res.render("images/newImage");
+
+        res.render("images/newImage", {categoryId: req.params.categoryId});
     }
 }

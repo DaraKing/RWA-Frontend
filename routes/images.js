@@ -3,6 +3,6 @@ let express = require("express"),
     images = require('../controllers/image')
 
 // New image
-router.get("/category-photo/upload", images.new);
+router.get("/category-photo/upload/:categoryId", images.new);
 
 module.exports = router;
