@@ -11,7 +11,6 @@ let express = require("express"),
 // Requiring routes
 var indexRoutes = require("./routes/index"),
     adminRoutes = require("./routes/admin"),
-    userRoutes = require("./routes/users"),
     authRoutes = require("./routes/auth"),
     imageRoutes = require("./routes/images");
 
@@ -22,7 +21,6 @@ app.use(express.static(__dirname + '/public'));
 // Use routes
 app.use("/", indexRoutes);
 app.use("/", adminRoutes);
-app.use("/", userRoutes);
 app.use("/", authRoutes);
 app.use("/", imageRoutes);
 
