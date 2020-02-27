@@ -32,7 +32,13 @@
         <div class="card-body text-center">
           <h5 class="card-title"><%= elem.first_name %> <%= elem.last_name %></h5>
           <!-- <button class="btn btn-outline-danger">Like <img src="https://image.flaticon.com/icons/svg/633/633759.svg" style="vertical-align: middle;" alt=""></button> -->
-          <button class="like btn btn-outline-danger" id="<%= elem.contest_photo_id %>"><span class="ml-4">Like</span></button>
+
+           <% if(elem.user_liked){ %>
+                       <button class="like btn btn-outline-danger bg-danger disabled"><span class="ml-4">Liked</span></button>
+                     <% } else { %>
+                       <button class="like btn btn-outline-danger" id="<%= elem.category_photo_id %>"><span class="ml-4">Like</span></button>
+                     <% } %>
+
         </div>
       </div>
       <% }) %>
