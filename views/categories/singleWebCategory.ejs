@@ -32,7 +32,7 @@
         <div class="card-body text-center">
           <h5 class="card-title"><%= elem.first_name %> <%= elem.last_name %></h5>
           <!-- <button class="btn btn-outline-danger">Like <img src="https://image.flaticon.com/icons/svg/633/633759.svg" style="vertical-align: middle;" alt=""></button> -->
-          <button class="like btn btn-outline-danger"><span class="ml-4">Like</span></button>
+          <button class="like btn btn-outline-danger" id="<%= elem.contest_photo_id %>"><span class="ml-4">Like</span></button>
         </div>
       </div>
       <% }) %>
@@ -61,7 +61,7 @@
 </div> -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
+<script src="/js/likes/index.js" type="module"></script>
 <script>
   $('img[data-enlargable]').addClass('img-enlargable').click(function(){
     var src = $(this).attr('src');
