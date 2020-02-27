@@ -24,5 +24,5 @@ if(user.role_id != 1) {
 
 document.getElementById("logout").addEventListener("click", function () {
     window.localStorage.removeItem('user');
-    window.reload();
+    window.location.reload();
 });
