@@ -27,17 +27,17 @@
   <div class="container">
     <div class="row d-flex justify-content-center">
       <% data.photos.forEach(elem => { %>
-      <div class="card col-lg-9 m-1">
+      <div class="card col-lg-4 border-0">
         <img data-enlargable style="cursor: zoom-in; max-height: 450px;" class="card-img-top p-1" alt="Image not found" src="http://localhost:4000/<%= elem.photo_filename %>" />
         <div class="card-body text-center">
           <h5 class="card-title"><%= elem.first_name %> <%= elem.last_name %></h5>
           <!-- <button class="btn btn-outline-danger">Like <img src="https://image.flaticon.com/icons/svg/633/633759.svg" style="vertical-align: middle;" alt=""></button> -->
 
-           <% if(elem.user_liked){ %>
-                       <button class="like dislike-image btn btn-outline-danger bg-danger disabled" id="<%= elem.category_photo_id %>"><span class="ml-4">Liked</span></button>
-                     <% } else { %>
-                       <button class="like like-image btn btn-outline-danger" id="<%= elem.category_photo_id %>"><span class="ml-4">Like</span></button>
-                     <% } %>
+          <% if(elem.user_liked){ %>
+            <button class="like dislike-image btn btn-outline-danger bg-danger disabled" id="<%= elem.category_photo_id %>"><span class="ml-4">Liked</span></button>
+          <% } else { %>
+            <button class="like like-image btn btn-outline-danger" id="<%= elem.category_photo_id %>"><span class="ml-4">Like</span></button>
+          <% } %>
 
         </div>
       </div>
@@ -45,6 +45,16 @@
     </div>
   </div>
 </section>
+
+<!-- >Footer -->
+
+<div class="footer bg-dark text-center p-5">
+    <div class="row">
+        <div class="container">
+            <span class="yellow text-dark p-2">Copyright © PhotoCon 2019</span>
+        </div>
+    </div>
+</div>
 
 
 <!-- <div class="jumbotron">

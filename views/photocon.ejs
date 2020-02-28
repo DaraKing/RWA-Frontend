@@ -31,7 +31,7 @@
                 <hr>
             </div>
         </div>
-        <div class="row text-center pt-4">
+        <div class="row text-center pt-4 d-flex justify-content-center">
             <% data.forEach(elem => { %>
                 <div class="col-md-4">
                     <a href="/category/<%= elem.category_id %>">
@@ -130,5 +130,15 @@
         </div>
     </div>
 </section>
+
+<!-- >Footer -->
+
+<div class="footer bg-dark text-center p-5">
+    <div class="row">
+        <div class="container">
+            <span class="yellow text-dark p-2">Copyright © PhotoCon 2019</span>
+        </div>
+    </div>
+</div>
 
 <% include partials/footer %>
